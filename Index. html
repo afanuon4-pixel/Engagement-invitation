@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف ملكية</title>
+    <!-- استيراد خطوط عربية مميزة من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #3d0c11; /* اللون العنابي الفخم */
+            --bg-light: #f9f6f0; /* لون البيج الورقي الهادئ */
+            --gold: #c5a880; /* اللون الذهبي */
+            --text-dark: #2c2c2c;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--bg-light);
+        }
+
+        /* القسم الأول: الواجهة الرئيسية للغلاف */
+        .cover-section {
+            background-color: var(--bg-dark);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 15px solid var(--gold);
+        }
+
+        .initials {
+            font-family: 'Amiri', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .cover-title {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            color: #dfdfdf;
+        }
+
+        .names-title {
+            font-family: 'Amiri', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .date-badge {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        .open-btn {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .open-btn:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        /* القسم الثاني: تفاصيل الدعوة والآية القرآنية */
+        .details-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .quran-verse {
+            font-family: 'Amiri', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 2;
+        }
+
+        .invitation-text {
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+        }
+
+        /* العداد التنازلي للأيام */
+        .countdown-container {
+            margin: 50px 0;
+        }
+
+        .countdown-title {
+            font-size: 1.2rem;
+            color: var(--bg-dark);
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .time-box {
+            background: white;
+            border: 1px solid #e2dbd0;
+            padding: 15px;
+            min-width: 80px;
+            border-radius: 6px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--bg-dark);
+        }
+
+        .time-box label {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* القسم الثالث: مكان وموعد الحفل */
+        .venue-section {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 5px solid var(--gold);
+        }
+
+        .venue-title {
+            font-size: 2rem;
+            color: var(--gold);
+            font-family: 'Amiri', serif;
+            margin-bottom: 20px;
+        }
+
+        .venue-details {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            padding: 14px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .map-btn:hover {
+            background-color: white;
+            color: var(--bg-dark);
+        }
+
+        .kids-note {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* التجاوب مع شاشات الهواتف المحمولة */
+        @media (max-width: 600px) {
+            .names-title { font-size: 2.2rem; }
+            .initials { font-size: 3rem; }
+            .quran-verse { font-size: 1.3rem; }
+            .timer { gap: 10px; }
+            .time-box { min-width: 60px; padding: 10px; }
+            .time-box span { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- قسم الغلاف الرئيسي -->
+    <section class="cover-section">
+        <div class="initials">ع & م</div>
+        <div class="cover-title">عقد قران وزفاف حالم</div>
+        <div class="names-title">علاء & مريم</div>
+        <div class="date-badge">السبت، 17 أكتوبر 2026</div>
+        <button class="open-btn" onclick="scrollToDetails()">عرض الدعوة</button>
+    </section>
+
+    <!-- قسم تفاصيل الدعوة -->
+    <section class="details-section" id="details">
+        <div class="quran-verse">
+            "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+        </div>
+        
+        <div class="invitation-text">
+            بقلوب تفيض بالحب والبهجة، يتشرف عائلتا العروسين بدعوتكم لحضور حفل زفاف نجليهما وتوثيق عهد الحب والوفاء. حضوركم ينير ليلتنا ويزيد من فرحتنا.
+        </div>
+
+        <!-- العداد التنازلي التفاعلي -->
+        <div class="countdown-container">
+            <div class="countdown-title">الوقت المتبقي لليلتنا المنتظرة</div>
+            <div class="timer">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <label>يوم</label>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <label>ساعة</label>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <label>دقيقة</label>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <label>ثانية</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مكان الحفل -->
+    <section class="venue-section">
+        <div class="venue-title">موعد ومكان الحفل</div>
+        <div class="venue-details">
+            <p><strong>المكان:</strong> فندق فور سيزونز (Four Seasons Hotel)</p>
+            <p><strong>الزمان:</strong> تمام الساعة 7:00 مساءً</p>
+        </div>
+        
+        <!-- يمكنك تغيير الرابط بالأسفل برابط قاعتك الحقيقي على جوجل ماب -->
+        <a href="https://maps.google.com" target="_blank" class="map-btn">📍 موقع الحفل على الخريطة</a>
+        
+        <div class="kids-note">نعتذر عن استقبال الأطفال، لكم منا كل الحب والتقدير.</div>
+    </section>
+
+    <!-- كود الجافا سكريبت للعداد التنازلي والحركة -->
+    <script>
+        // دالة النزول السلس عند الضغط على زر فتح الدعوة
+        function scrollToDetails() {
+            document.getElementById('details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // تحديد تاريخ الزفاف التنازلي (17 أكتوبر 2026)
+        const weddingDate = new Date("October 17, 2026 19:00:00").getTime();
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            // حساب الوقت
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // إدخال الأرقام في المربعات
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // عند انتهاء العداد
+            if (difference < 0) {
+                clearInterval(timerInterval);
+                document.querySelector(".timer").innerHTML = "<h3>بدأت الفرحة الآن! مبروك للعرسان</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
